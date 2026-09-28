@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CineShelf — Diary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body data-page="diary" class="min-h-screen bg-zinc-900 text-zinc-100">
+    <div class="max-w-6xl mx-auto">
+      <nav class="sticky top-0 z-50 bg-zinc-900/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a href="index.html" class="flex-shrink-0 inline-flex items-center">
+            <img src="assets/CineShelfLogo.png" alt="CineShelf" class="h-12 w-auto object-contain">
+          </a>
+          <div class="flex items-center space-x-4">
+            <a href="index.html" class="text-zinc-200 hover:text-emerald-300">Dashboard</a>
+            <a href="diary.html" class="text-zinc-200 hover:text-emerald-300">Diary</a>
+          </div>
+        </div>
+      </nav>
+      <div class="p-6">
+
+      <section class="bg-zinc-800 p-4 rounded shadow-sm">
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-zinc-700">
+            <thead>
+              <tr class="text-left text-zinc-300">
+                <th class="px-4 py-2">Title</th>
+                <th class="px-4 py-2">Year</th>
+                <th class="px-4 py-2">Watched</th>
+                <th class="px-4 py-2">Rating</th>
+                <th class="px-4 py-2">Notes</th>
+                <th class="px-4 py-2">Added</th>
+                <th class="px-4 py-2">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="diaryBody" class="bg-zinc-900 divide-y divide-zinc-700"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

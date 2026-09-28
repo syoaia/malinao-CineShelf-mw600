@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CineShelf — Add / Edit Movie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body data-page="form" class="min-h-screen bg-zinc-900 text-zinc-100">
+    <div class="max-w-3xl mx-auto">
+      <nav class="sticky top-0 z-50 bg-zinc-900/90 backdrop-blur-md border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <a href="index.html" class="flex-shrink-0 inline-flex items-center">
+            <img src="assets/CineShelfLogo.png" alt="CineShelf" class="h-12 w-auto object-contain">
+          </a>
+          <div class="flex items-center space-x-4">
+            <a href="index.html" class="text-zinc-200 hover:text-emerald-300">Dashboard</a>
+            <a href="diary.html" class="text-zinc-200 hover:text-emerald-300">Diary</a>
+          </div>
+        </div>
+      </nav>
+      <div class="p-6">
+      <form id="movieForm" class="bg-zinc-800 p-6 rounded shadow-sm">
+        <div class="mb-4">
+          <label class="block text-sm text-zinc-300 font-medium">Title</label>
+          <input id="title" name="title" required class="mt-1 w-full px-3 py-2 rounded bg-zinc-900 border border-zinc-700" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-zinc-300 font-medium">Year</label>
+            <input id="year" name="year" type="number" min="1888" class="mt-1 w-full px-3 py-2 rounded bg-zinc-900 border border-zinc-700" />
+          </div>
+          <div>
+            <label class="block text-sm text-zinc-300 font-medium">Watched</label>
+            <select id="watched" name="watched" class="mt-1 w-full px-3 py-2 rounded bg-zinc-900 border border-zinc-700">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <label class="block text-sm text-zinc-300 font-medium">Poster Image URL (optional)</label>
+          <input id="poster" name="poster" type="url" placeholder="https://..." class="mt-1 w-full px-3 py-2 rounded bg-zinc-900 border border-zinc-700" />
+        </div>
+
+        <div class="mt-4">
+          <label class="block text-sm text-zinc-300 font-medium">Rating</label>
+          <div id="starRating" class="mt-2 flex items-center gap-2">
+            <input type="hidden" id="rating" name="rating" value="" />
+            <button type="button" data-value="1" class="star text-2xl text-zinc-500">★</button>
+            <button type="button" data-value="2" class="star text-2xl text-zinc-500">★</button>
+            <button type="button" data-value="3" class="star text-2xl text-zinc-500">★</button>
+            <button type="button" data-value="4" class="star text-2xl text-zinc-500">★</button>
+            <button type="button" data-value="5" class="star text-2xl text-zinc-500">★</button>
+          </div>
+        </div>
+
+        <div class="mt-4">
+          <label class="block text-sm text-zinc-300 font-medium">Notes</label>
+          <textarea id="notes" name="notes" rows="6" class="mt-1 w-full px-3 py-2 rounded bg-zinc-900 border border-zinc-700"></textarea>
+        </div>
+
+        <div class="mt-6 flex items-center gap-3">
+          <button type="submit" class="px-4 py-2 rounded bg-emerald-600 hover:bg-emerald-500 text-zinc-900">Save</button>
+          <button type="button" id="cancel" class="px-4 py-2 rounded bg-zinc-700 hover:bg-zinc-600">Cancel</button>
+        </div>
+      </form>
+      </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
